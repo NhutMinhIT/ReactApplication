@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+//import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './MenuComponents';
 import DishDetail from './DishdetailComponents';
+import Header from './HeaderComponents';
+import Footer from './FooterComponents';
 import { DISHES } from '../shared/dishes';
 
-export default class Main extends Component {
+class Main extends Component {
 
     constructor(props) {
         super(props);
@@ -21,15 +23,18 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                <Navbar dark color="primary">
-                    <div className="container">
-                        <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-                    </div>
-                </Navbar>
+                {/* <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
+          </div>
+        </Navbar> */}
+                <Header />
                 <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
                 <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+                <Footer />
             </div>
         );
     }
 }
 
+export default Main;
