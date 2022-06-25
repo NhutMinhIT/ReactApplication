@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle
-} from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 function RenderCard({ item }) {
-
     return (
         <Card>
-            <CardImg src={item.image} alt={item.name} />
+            <CardImg src={process.env.PUBLIC_URL + item.image} alt={item.name} />
             <CardBody>
                 <CardTitle>{item.name}</CardTitle>
                 {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
@@ -16,7 +12,6 @@ function RenderCard({ item }) {
             </CardBody>
         </Card>
     );
-
 }
 
 function Home(props) {
@@ -34,7 +29,6 @@ function Home(props) {
                 </div>
             </div>
         </div>
-    );
+    )
 }
-
 export default Home;
