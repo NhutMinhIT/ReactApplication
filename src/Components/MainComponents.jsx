@@ -60,7 +60,7 @@ export default class Main extends Component {
                     <Route exact path="/menu" component={() => <Menu dishes={this.state.dishes} />} />
                     <Route path="/menu/:dishId" component={DishWithId} />
                     <Route exact path="/aboutus" component={AboutPage} />
-                    <Route exact path="/contactus" component={Contact} />
+                    <Route exact path='/contactus' component={Contact} />
                     <Route exact path="/aboutus" component={AboutPage} />
                     <Redirect to="/home" />
 
